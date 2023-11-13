@@ -1,0 +1,12 @@
+# Hide folder listings
+Options All -Indexes
+
+# Error Pages
+ErrorDocument 404 /
+  
+# Remove www
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^www.coloradobaymax.com$ [NC]
+RewriteRule ^(.*)$ https://coloradobaymax.com/$1 [R=301,L]
+</IfModule>
